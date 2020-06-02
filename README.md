@@ -44,3 +44,8 @@ Webを通して計画を計画する際にそのサポートをしてくれるWe
 - 画面設計
   - doc/screen.dio
   - https://app.diagrams.net/#G1gICtZxxr1gSnYVNoC3Q6HtoAY7NS90p_
+
+## 使用予定Gem
+- react-rails
+- webpacker
+- activerecord-import
