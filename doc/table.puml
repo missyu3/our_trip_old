@@ -1,0 +1,172 @@
+@startuml EntityRelationship
+entity "user" {
+    + id [PK]
+    ==
+    name:string
+    password_digest:string
+    created_at
+    updated_at
+}
+
+entity "user_detail" {
+    + id [PK]
+    ==
+    # user_id [FK(user.id)]
+    email:string
+    icon:text
+    created_at
+    updated_at
+}
+
+entity "user_to_plan" {
+    + id [PK]
+    ==
+    # plan_id [FK(plan.id)]
+    # user_id [FK(user.id)]
+    created_at
+    updated_at
+}
+
+entity "plan" {
+    + id [PK]
+    ==
+    name:string
+    content:text
+    # host_user [FK(user.id)]
+    created_at
+    updated_at
+}
+
+entity "label" {
+    + id [PK]
+    ==
+    # plan_id [FK(plan.id)]
+    name:string
+    created_at
+    updated_at
+}
+
+entity "schedule" {
+    + id [PK]
+    ==
+    # plan_id [FK(plan.id)]
+    sort:integer
+    # plan_item_id [FK(plan_item.id)]
+    start_time:datetime
+    created_at
+    updated_at
+}
+
+entity "plan_item" {
+    + id [PK]
+    ==
+    # plan_id [FK(plan.id)]
+    title:string
+    category:integer
+    content:text
+    schedule_display:boolean
+    # create_user_id [FK(user.id)]
+    created_at
+    updated_at
+}
+
+entity "plan_item_to_label" {
+    + id [PK]
+    ==
+    # plan_item_id [FK(plan_item.id)]
+    # label_id [FK(label.id)]
+    created_at
+    updated_at
+}
+
+entity "plan_item_reference_url" {
+    + id [PK]
+    ==
+    # plan_item_id [FK(plan_item.id)]
+    url:text
+    created_at
+    updated_at
+}
+
+entity "plan_item_comment" {
+    + id [PK]
+    ==
+    # plan_item_id [FK(plan_item_id.id)]
+    comment:text
+    created_at
+    updated_at
+}
+
+entity "map_point" {
+    + id [PK]
+    ==
+    # plan_item_id [FK(plan_item.id)]
+    lat:float
+    lng:float
+    created_at
+    updated_at
+}
+
+entity "check_list" {
+    + id [PK]
+    ==
+    # plan_id [FK(plan.id)]
+    title:string
+    created_at
+    updated_at
+}
+
+entity "check_list_item" {
+    + id [PK] 
+    ==
+    # check_list_id [FK(check_list.id)]
+    sort:integer
+    item:text
+    created_at
+    updated_at
+}
+
+entity "user_check_status" {
+    + id [PK]
+    ==
+    # user_id [FK(user.id)]
+    # check_list_item_id [FK(check_list_item.id)]
+    checked:boolean
+    created_at
+    updated_at
+}
+
+entity "expenses" {
+    + id [PK]
+    ==
+    # plan_id [FK(plan.id)]
+    title:string
+    price:decimal
+    pay_user_id
+    created_at
+    updated_at
+}
+
+user --o| user_detail
+user --right--o{ plan
+user --o{ user_to_plan
+user --o| user_check_status
+user --o| plan_item
+user --o| expenses
+plan --o| schedule
+plan --o| expenses
+plan --down--o| plan_item
+plan --o{ label
+plan --|{ user_to_plan
+plan --o{ check_list
+schedule --|{ plan_item
+check_list --o{ check_list_item
+check_list_item ||--|| user_check_status
+plan_item --o{ plan_item_comment
+plan_item --o{ plan_item_reference_url
+plan_item --o{ map_point
+plan_item --o{ plan_item_to_label
+label --|{ plan_item_to_label
+
+@enduml
+
