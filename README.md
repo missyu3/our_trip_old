@@ -45,7 +45,7 @@ Webを介して旅行を計画する際に、その手助けを行う。
   - https://drive.google.com/file/d/1ISW5D05s2irvficf8AmZPUD1tzARDc28/view?usp=sharing
 - 画面設計
   - doc/screen.dio
-  - https://app.diagrams.net/#G1gICtZxxr1gSnYVNoC3Q6HtoAY7NS90p_
+  - https://drive.google.com/file/d/1gICtZxxr1gSnYVNoC3Q6HtoAY7NS90p_/view?usp=sharing
 
 ## 使用予定Gem
 - react-rails
