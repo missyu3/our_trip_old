@@ -42,10 +42,10 @@ Webを介して旅行を計画する際に、その手助けを行う。
   - ![ER図](doc/table/EntityRelationship.png)
 - 画面遷移
   - doc/diagram.dio
-  - https://drive.google.com/file/d/1ISW5D05s2irvficf8AmZPUD1tzARDc28/view?usp=sharing
+  - https://drive.google.com/file/d/11LLMA9KLCp-rBKegX-YBOtMf_M2O6-Ao/view?usp=sharing
 - 画面設計
   - doc/screen.dio
-  - https://drive.google.com/file/d/1gICtZxxr1gSnYVNoC3Q6HtoAY7NS90p_/view?usp=sharing
+  - https://drive.google.com/file/d/1NrgDaCkWMpHfCc_lyGMe710cn_S7GN9m/view?usp=sharing
 
 ## 使用予定Gem
 - react-rails
@@ -58,4 +58,3 @@ Webを介して旅行を計画する際に、その手助けを行う。
   - コメント機能
 - 就業Term外
   - React
-  - Docker
