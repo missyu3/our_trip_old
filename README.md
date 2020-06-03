@@ -32,9 +32,9 @@ Webを通して計画を計画する際にそのサポートをしてくれるWe
 
 ## 設計
 - カタログ設計
-  - https://docs.google.com/spreadsheets/d/1_9TniFWZGfS6F2vsR7lUj-vMjea6-rJn-6nDzZYDYkA/edit#gid=0
+  - https://docs.google.com/spreadsheets/d/1_9TniFWZGfS6F2vsR7lUj-vMjea6-rJn-6nDzZYDYkA/edit?usp=sharing
 - テーブル設計
-  - https://docs.google.com/spreadsheets/d/1_9TniFWZGfS6F2vsR7lUj-vMjea6-rJn-6nDzZYDYkA/edit#gid=798774447
+  - https://docs.google.com/spreadsheets/d/1_9TniFWZGfS6F2vsR7lUj-vMjea6-rJn-6nDzZYDYkA/edit?usp=sharing
 - ER図
   - doc/table.puml
   - ![ER図](doc/table.png)
