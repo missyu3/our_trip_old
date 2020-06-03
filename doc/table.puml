@@ -165,7 +165,7 @@ users --o| user_check_states
 users --o| plan_items
 users --o| expenses
 users --o{ plan_item_comments
-plans --o| schedules
+plans --o{ schedules
 plans --o| expenses
 plans --o| plan_items
 plans --o{ labels
