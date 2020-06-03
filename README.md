@@ -37,7 +37,7 @@ Webを通して計画を計画する際にそのサポートをしてくれるWe
   - https://docs.google.com/spreadsheets/d/1_9TniFWZGfS6F2vsR7lUj-vMjea6-rJn-6nDzZYDYkA/edit?usp=sharing
 - ER図
   - doc/table.puml
-  - ![ER図](doc/table.png)
+  - ![ER図](doc/table/EntityRelationship.png)
 - 画面遷移
   - doc/diagram.dio
   - https://app.diagrams.net/#G1ISW5D05s2irvficf8AmZPUD1tzARDc28

@@ -147,12 +147,23 @@ entity "expenses" {
     updated_at
 }
 
+entity "plan_item_comment" {
+    + id [PK]
+    ==
+    # plan_item_id [FK(plan_item.id)]
+    comment:text
+    # user_id [FK(user.id)]
+    created_at
+    updated_at
+}
+
 user --o| user_detail
 user --right--o{ plan
 user --o{ user_to_plan
 user --o| user_check_status
 user --o| plan_item
 user --o| expenses
+user --o{ plan_item_comment
 plan --o| schedule
 plan --o| expenses
 plan --down--o| plan_item
@@ -166,6 +177,7 @@ plan_item --o{ plan_item_comment
 plan_item --o{ plan_item_reference_url
 plan_item --o{ map_point
 plan_item --o{ plan_item_to_label
+plan_item --o{ plan_item_comment
 label --|{ plan_item_to_label
 
 @enduml
