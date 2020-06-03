@@ -49,3 +49,11 @@ Webを通して計画を計画する際にそのサポートをしてくれるWe
 - react-rails
 - webpacker
 - activerecord-import
+
+## 使用技術
+- 就業Term
+  - AWS
+  - RSpec
+- 就業Term外
+  - React
+  - Docker
