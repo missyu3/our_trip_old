@@ -151,7 +151,7 @@ entity "plan_item_comments" {
 entity "comments" {
     + id [PK]
     ==
-    # plan_item_comments_id [FK(plan_item_comments.id)]
+    # plan_item_comment_id [FK(plan_item_comments.id)]
     comment:text
     created_at
     updated_at
@@ -164,7 +164,7 @@ users --o{ participants
 users --o| user_check_states
 users --o| plan_items
 users --o| expenses
-plans --o{ plan_item_comments
+users --o{ plan_item_comments
 plans --o| schedules
 plans --o| expenses
 plans --o| plan_items
