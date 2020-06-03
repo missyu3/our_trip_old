@@ -89,15 +89,6 @@ entity "plan_item_references" {
     updated_at
 }
 
-entity "plan_item_comments" {
-    + id [PK]
-    ==
-    # plan_item_id [FK(plan_items.id)]
-    comment:text
-    created_at
-    updated_at
-}
-
 entity "map_points" {
     + id [PK]
     ==
@@ -148,6 +139,25 @@ entity "expenses" {
     updated_at
 }
 
+entity "plan_item_comments" {
+    + id [PK]
+    ==
+    # plan_item_id [FK(plan_items.id)]
+    # user_id [FK(users.id)]
+    created_at
+    updated_at
+}
+
+entity "comments" {
+    + id [PK]
+    ==
+    # plan_item_comments_id [FK(plan_item_comments.id)]
+    comment:text
+    created_at
+    updated_at
+}
+
+
 users --o| user_details
 users --right--o{ plans
 users --o{ participants
@@ -169,6 +179,7 @@ plan_items --o{ plan_item_references
 plan_items --o{ map_points
 plan_items --o{ plan_item_to_labels
 labels --|{ plan_item_to_labels
+plan_item_comments --o{ comments
 
 @enduml
 
