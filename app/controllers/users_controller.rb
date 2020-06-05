@@ -8,9 +8,8 @@ class UsersController < ApplicationController
     if @user_form.save
       redirect_to user_path(@user_form.user_id)
     else
-      render template: "users/new"
+      render :new
     end
-    
   end
 
   def show
