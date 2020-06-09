@@ -5,6 +5,11 @@ class UserForm
   attr_reader :user_id
   attr_accessor :name, :password, :password_confirmation, :email, :name_or_email
 
+  def initialize(user_id: , name: , password: , password_confirmation: , email: )
+    @user_id = user_id
+    super(name: name , password: password , password_confirmation: password_confirmation , email: email)
+  end
+
   def save
     user = User.new(name: name , password: password , password_confirmation: password_confirmation)
     user.user_detail = UserDetail.new(email: email)
@@ -19,8 +24,7 @@ class UserForm
   def self.find_by(user_id)
     user = User.find_by(id: user_id)
     detail = user.user_detail
-    @user_id = user.id
-    UserForm.new(name: user.name , password: user.password , password_confirmation: user.password_confirmation , email: detail.email)
+    UserForm.new(user_id: user.id, name: user.name , password: user.password , password_confirmation: user.password_confirmation , email: detail.email)
   end
 
   def self.find_by_user(keyword)
