@@ -9,33 +9,32 @@
   </head>
   <header>
     <nav class="navbar">
-        <a class="navbar-brand" href="#">
-          タイトル
-        </a>
-        <div class="collapse navbar-collapse" id="navbarEexample7">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-expanded="false">
-                メニュー <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <% if logged_in? %>
-                  <li role="presentation"><%= link_to "ユーザー",user_path(1) %></li>
-                  <li role="presentation"><%= link_to "ログアウト",session_path(current_user), method: :delete %></li>
-                <% else %>
-                  <li role="presentation">"予定A"</li>
-                  <li role="presentation">"予定B"</li>
-                <% end %>
-              </ul>
-            </li>
-          </ul>
-          <% if logged_in? %>
-            <p class="navbar-text navbar-right">ようこそ <a href="#" class="navbar-link"><%= current_user.name %></a> さん。</p>
-          <% else %>
+      <a class="navbar-brand" href="#">
+        タイトル
+      </a>
+      <div class="collapse navbar-collapse" id="navbarEexample7">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-expanded="false">
+              メニュー <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <% if logged_in? %>
+                <li role="presentation"><%= link_to "ユーザー",user_path(1) %></li>
+                <li role="presentation"><%= link_to "ログアウト",session_path(current_user), method: :delete %></li>
+              <% else %>
+                <li role="presentation">"予定A"</li>
+                <li role="presentation">"予定B"</li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+        <% if logged_in? %>
+          <p class="navbar-text navbar-right">ようこそ <a href="#" class="navbar-link"><%= current_user.name %></a> さん。</p>
+        <% else %>
           <p class="navbar-text navbar-right"><%= link_to "ログイン", new_session_path %></p>
-          <% end %>
-        </div>
-
+        <% end %>
+      </div>
     </nav>
   </header>
   <body>
@@ -45,7 +44,6 @@
     <%= yield %>
   </body>
   <footer>
-    MySystem
+    Copyright© missyu3 2020 
   </footer>
-
 </html>
