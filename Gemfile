@@ -32,3 +32,5 @@ group :test do
 end
 
 gem 'bcrypt', '3.1.11'
+gem 'carrierwave', '~> 2.0'
+gem "mini_magick"
