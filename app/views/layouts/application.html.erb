@@ -4,12 +4,36 @@
     <title>OurTrip</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">
+          タイトル
+        </a>
+        <div class="collapse navbar-collapse" id="navbarEexample7">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-expanded="false">
+                メニュー <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li role="presentation"><%= link_to "ユーザー",user_path(1) %></li>
+                <li role="presentation"><%= link_to "ユーザー",user_path(1) %></li>
+              </ul>
+            </li>
+          </ul>
+          <p class="navbar-text navbar-right">ようこそ <a href="#" class="navbar-link">ゲスト</a> さん。</p>
+        </div>
 
+    </nav>
+  </header>
   <body>
     <%= yield %>
   </body>
+  <footer>
+    MySystem
+  </footer>
+
 </html>
