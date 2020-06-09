@@ -19,17 +19,29 @@
                 メニュー <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
-                <li role="presentation"><%= link_to "ユーザー",user_path(1) %></li>
-                <li role="presentation"><%= link_to "ユーザー",user_path(1) %></li>
+                <% if logged_in? %>
+                  <li role="presentation"><%= link_to "ユーザー",user_path(1) %></li>
+                  <li role="presentation"><%= link_to "ログアウト",session_path(current_user), method: :delete %></li>
+                <% else %>
+                  <li role="presentation">"予定A"</li>
+                  <li role="presentation">"予定B"</li>
+                <% end %>
               </ul>
             </li>
           </ul>
-          <p class="navbar-text navbar-right">ようこそ <a href="#" class="navbar-link">ゲスト</a> さん。</p>
+          <% if logged_in? %>
+            <p class="navbar-text navbar-right">ようこそ <a href="#" class="navbar-link"><%= current_user.name %></a> さん。</p>
+          <% else %>
+          <p class="navbar-text navbar-right"><%= link_to "ログイン", new_session_path %></p>
+          <% end %>
         </div>
 
     </nav>
   </header>
   <body>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
     <%= yield %>
   </body>
   <footer>
