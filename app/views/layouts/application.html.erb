@@ -38,8 +38,12 @@
     </nav>
   </header>
   <body>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
+    <% if flash.present? %>
+      <div class="message_box">
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value) %>
+        <% end %>
+      </div>
     <% end %>
     <%= yield %>
   </body>
