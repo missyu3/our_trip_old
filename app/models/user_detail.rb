@@ -1,4 +1,6 @@
 class UserDetail < ApplicationRecord
+  mount_uploader :icon, ImageUploader
+
   belongs_to :user
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

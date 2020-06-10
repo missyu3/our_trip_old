@@ -4,12 +4,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = UserForm.find_by_user(params[:session][:name_or_email])
-    if user && user.authenticate(params[:session][:password])
-      session[:user_id] = user.id
-      redirect_to user_path(user)
+    @user_form = UserForm.find_by_name_or_email(params[:session][:name_or_email])
+    if @user_form.user && @user_form.user.authenticate(params[:session][:user][:password])
+      session[:user_id] = @user_form.user.id
+      redirect_to user_path(@user_form.user)
     else
-      @user_form = UserForm.new
+      binding.irb
       flash.now[:danger] = 'ログインに失敗しました'
       render :new
     end

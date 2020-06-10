@@ -4,11 +4,24 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user_form = UserForm.new(params_user_form)
+    @user_form = UserForm.initialize_for_params(params: params_user_form)
     if @user_form.save
-      redirect_to user_path(@user_form.user_id)
+      redirect_to user_path(@user_form.user.id)
     else
       render :new
+    end
+  end
+
+  def edit
+    @user_form = UserForm.find_by(current_user.id)
+  end
+
+  def update
+    @user_form = UserForm.find_by(params_user_form[:user][:id])
+    if @user_form.update(params: params_user_form)
+      redirect_to user_path(@user_form.user.id)
+    else
+      render :edit
     end
   end
 
@@ -17,6 +30,6 @@ class UsersController < ApplicationController
   end
 
   def params_user_form
-    params.require(:user_form).permit(:name, :password, :password_confirmation, :email)
+    params.require(:user_form).permit!
   end
 end
