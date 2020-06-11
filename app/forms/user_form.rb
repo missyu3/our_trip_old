@@ -57,10 +57,10 @@ class UserForm
   def self.find_by_name_or_email(name_or_email)
     if name_or_email.match(UserDetail::VALID_EMAIL_REGEX)
       detail = UserDetail.find_by(email: name_or_email.downcase)
-      user = detail.user
+      user = detail.user if user.present?
     else
       user = User.find_by(name: name_or_email)
-      detail = user.user_detail
+      detail = user.user_detail if user.present?
     end
     UserForm.new(user: user , user_detail: detail, name_or_email: name_or_email)
   end

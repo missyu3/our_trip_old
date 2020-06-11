@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
       session[:user_id] = @user_form.user.id
       redirect_to user_path(@user_form.user)
     else
-      binding.irb
       flash.now[:danger] = 'ログインに失敗しました'
       render :new
     end
