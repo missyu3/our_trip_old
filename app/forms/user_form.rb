@@ -16,6 +16,7 @@ class UserForm
     @user.user_detail = @user_detail if @user_detail.present?
     return true if @user.save
     @errors << @user.errors.full_messages
+    @errors.flatten!
     false
   end
 

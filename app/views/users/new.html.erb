@@ -10,36 +10,36 @@
 <div class="container">
   <div class="row">
     <div class="col-10">
-      <h1 class='py-4 text-center'>サインイン</h1>
+      <h1 class='py-4 text-center'><%= I18n.t("title.user_new") %></h1>
       <div class='center_form'>
         <%= form_with(model: @user_form, url: users_path, local: true) do |form| %>
           <%= form.fields_for :user , @user_form.user do |user_fields| %>
             <div class="form-group">
-              <%= user_fields.label :name %>
+              <%= user_fields.label :name , I18n.t("model.name")  %>
               <%= user_fields.text_field :name ,class:'form-control' %>
             </div>
           <% end %>
           <%= form.fields_for :user_detail , @user_form.user_detail  do |user_detail_fields| %>
             <div class="form-group">
-              <%= user_detail_fields.label :email %>
+              <%= user_detail_fields.label :email , I18n.t("model.email")  %>
               <%= user_detail_fields.email_field :email ,class:'form-control' %>
             </div>
             <div class="form-group">
-              <%= user_detail_fields.label :icon %>
+              <%= user_detail_fields.label :icon , I18n.t("model.icon")  %>
               <%= user_detail_fields.file_field :icon %>
             </div>
           <% end %>
           <%= form.fields_for :user , @user_form.user  do |user_fields| %>
             <div class="form-group">
-              <%= user_fields.label :password %>
+              <%= user_fields.label :password , I18n.t("model.password")  %>
               <%= user_fields.password_field :password ,class:'form-control' %>
             </div>
             <div class="form-group">
-              <%= user_fields.label :password_digest %>
+              <%= user_fields.label :password_digest , I18n.t("model.password_digest")  %>
               <%= user_fields.password_field :password_digest ,class:'form-control' %>
             </div>
           <% end %>
-          <%= form.submit "Log in" ,class:'btn btn-primary' %>
+          <%= form.submit nil ,class:'btn btn-primary' %>
         <% end %>
       </div>
     </div>
