@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :login_required 
+
   def new
     @user_form = UserForm.new
   end

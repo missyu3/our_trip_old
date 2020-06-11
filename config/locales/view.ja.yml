@@ -4,6 +4,7 @@ ja:
   title:
     session_new: ログイン
     user_new: サインイン
+    user_edit: 編集
   button:
     login: ログイン
     create_user: 新しいアカウントの作成
