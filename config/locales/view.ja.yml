@@ -1,0 +1,16 @@
+---
+#I18n.t("title.session_new")
+ja:
+  title:
+    session_new: ログイン
+  button:
+    login: ログイン
+    create_user: 新しいアカウントの作成
+  model:
+    password: パスワード
+  message:
+    please_input_name_or_email: ユーザ名称かメールアドレスを入力してください
+    failed_login: ログインに失敗しました
+    logout: ログアウトしました
+
+
